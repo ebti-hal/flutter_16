@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-
 import 'custom_box.dart';
+
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -30,211 +31,240 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Register",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 32),),
-                  SizedBox(height: 20,),
-              
+                  Text(
+                    "Register",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 32,
+                    ),
+                  ),
+                  SizedBox(height: 20),
+
                   TextFormField(
                     controller: phone,
                     decoration: InputDecoration(
                       labelText: "phone",
                       hintText: "Enter your phone number",
-                      prefixIcon: Icon(Icons.call,color: Colors.black,),
-                      suffixIcon: Icon(Icons.check_circle,color: Colors.black,size: 20,),
+                      prefixIcon: Icon(Icons.call, color: Colors.black),
+                      suffixIcon: Icon(
+                        Icons.check_circle,
+                        color: Colors.black,
+                        size: 20,
+                      ),
                       fillColor: Colors.grey.shade100,
                       filled: true,
-                      labelStyle: TextStyle(color: Colors.black,fontSize: 16,),
+                      labelStyle: TextStyle(color: Colors.black, fontSize: 16),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                       ),
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white,width: 2,),
+                        borderSide: BorderSide(color: Colors.white, width: 2),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
-                        borderSide: BorderSide(color: Colors.white,width: 2),
+                        borderSide: BorderSide(color: Colors.white, width: 2),
                       ),
                       errorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
-                        borderSide: BorderSide(color: Colors.white,width: 2),
+                        borderSide: BorderSide(color: Colors.white, width: 2),
                       ),
                       focusedErrorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
-                        borderSide: BorderSide(color: Colors.white,width: 2),
+                        borderSide: BorderSide(color: Colors.white, width: 2),
                       ),
                     ),
                     scrollPadding: EdgeInsets.all(10),
                     maxLength: 11,
-                    validator: (value){
-                      if(value == null || value.isEmpty){
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
                         return "please enter your phone number";
                       }
-                      if(value.length != 11){
+                      if (value.length != 11) {
                         return "your mobile number is wrong";
                       }
                       return null;
                     },
                   ),
-                  SizedBox(height: 15,),
-              
+                  SizedBox(height: 15),
+
                   TextFormField(
                     controller: email,
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
                       labelText: "Email",
                       hintText: "Enter your email",
-                      prefixIcon: Icon(Icons.email,color: Colors.black,),
+                      prefixIcon: Icon(Icons.email, color: Colors.black),
                       fillColor: Colors.grey.shade100,
                       filled: true,
-                      labelStyle: TextStyle(color: Colors.black,fontSize: 16,),
+                      labelStyle: TextStyle(color: Colors.black, fontSize: 16),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                       ),
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color:Colors.white,width: 2),
+                        borderSide: BorderSide(color: Colors.white, width: 2),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
-                        borderSide: BorderSide(color: Colors.white,width: 2),
+                        borderSide: BorderSide(color: Colors.white, width: 2),
                       ),
                       errorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
-                        borderSide: BorderSide(color: Colors.white,width: 2),
+                        borderSide: BorderSide(color: Colors.white, width: 2),
                       ),
                       focusedErrorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
-                        borderSide: BorderSide(color: Colors.white,width: 2),
+                        borderSide: BorderSide(color: Colors.white, width: 2),
                       ),
                     ),
-                    validator: (value){
-                      if(value == null || value.isEmpty){
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
                         return "please enter your email";
                       }
-                      if(!value.contains("@gmail.com")){
+                      if (!value.contains("@gmail.com")) {
                         return "your email is wrong";
                       }
                       return null;
                     },
                   ),
-                  SizedBox(height: 15,),
+                  SizedBox(height: 15),
                   TextFormField(
                     controller: password,
                     obscureText: _obscurePassword,
                     decoration: InputDecoration(
                       labelText: "Password",
                       hintText: "Enter your password",
-                      prefixIcon: Icon(Icons.lock,color: Colors.black,),
+                      prefixIcon: Icon(Icons.lock, color: Colors.black),
                       suffixIcon: IconButton(
-                        onPressed: (){
+                        onPressed: () {
                           setState(() {
                             _obscurePassword = !_obscurePassword;
                           });
                         },
-                        icon: Icon(_obscurePassword? Icons.visibility_off:Icons.visibility,color: Colors.black,size: 20,),
+                        icon: Icon(
+                          _obscurePassword
+                              ? Icons.visibility_off
+                              : Icons.visibility,
+                          color: Colors.black,
+                          size: 20,
+                        ),
                       ),
                       fillColor: Colors.grey.shade100,
                       filled: true,
-                      labelStyle: TextStyle(color: Colors.black,fontSize: 16,),
+                      labelStyle: TextStyle(color: Colors.black, fontSize: 16),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                       ),
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white,width: 2),
+                        borderSide: BorderSide(color: Colors.white, width: 2),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
-                        borderSide: BorderSide(color: Colors.white,width: 2),
+                        borderSide: BorderSide(color: Colors.white, width: 2),
                       ),
                       errorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
-                        borderSide: BorderSide(color: Colors.white,width: 2),
+                        borderSide: BorderSide(color: Colors.white, width: 2),
                       ),
                       focusedErrorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
-                        borderSide: BorderSide(color: Colors.white,width: 2),
+                        borderSide: BorderSide(color: Colors.white, width: 2),
                       ),
                     ),
-                    validator: (value){
-                      if(value == null || value.isEmpty){
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
                         return "please enter your password";
                       }
-                      if(value.length < 8){
+                      if (value.length < 8) {
                         return "Password must be 8 characters";
                       }
                       return null;
                     },
                   ),
-                  SizedBox(height: 15,),
+                  SizedBox(height: 15),
                   TextFormField(
                     controller: rePassword,
                     obscureText: _obscureConfirmPassword,
                     decoration: InputDecoration(
                       labelText: "Confirm password",
                       hintText: "Re-Enter your password",
-                      prefixIcon: Icon(Icons.lock,color: Colors.black,),
+                      prefixIcon: Icon(Icons.lock, color: Colors.black),
                       suffixIcon: IconButton(
-                        onPressed: (){
+                        onPressed: () {
                           setState(() {
                             _obscureConfirmPassword = !_obscureConfirmPassword;
                           });
                         },
-                        icon: Icon(_obscureConfirmPassword? Icons.visibility_off:Icons.visibility,color: Colors.black,size: 20,),
+                        icon: Icon(
+                          _obscureConfirmPassword
+                              ? Icons.visibility_off
+                              : Icons.visibility,
+                          color: Colors.black,
+                          size: 20,
+                        ),
                       ),
                       fillColor: Colors.grey.shade100,
                       filled: true,
-                      labelStyle: TextStyle(color: Colors.black,fontSize: 16,),
+                      labelStyle: TextStyle(color: Colors.black, fontSize: 16),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                       ),
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color:Colors.white,width: 2),
+                        borderSide: BorderSide(color: Colors.white, width: 2),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
-                        borderSide: BorderSide(color: Colors.white,width: 2),
+                        borderSide: BorderSide(color: Colors.white, width: 2),
                       ),
                       errorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
-                        borderSide: BorderSide(color: Colors.white,width: 2),
+                        borderSide: BorderSide(color: Colors.white, width: 2),
                       ),
                       focusedErrorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
-                        borderSide: BorderSide(color: Colors.white,width: 2),
+                        borderSide: BorderSide(color: Colors.white, width: 2),
                       ),
                     ),
-                    validator: (value){
-                      if(value == null || value.isEmpty){
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
                         return "please enter your password";
                       }
-                      if(value.length < 8){
+                      if (value.length < 8) {
                         return "Password must be 8 characters";
+                      }
+                      if (value != password.text) {
+                        return "password do not match";
                       }
                       return null;
                     },
                   ),
-                  SizedBox(height: 30,),
+                  SizedBox(height: 30),
                   ElevatedButton(
-                    onPressed: (){
-                      if(formKey.currentState!.validate());
+                    onPressed: () {
+                      if (formKey.currentState!.validate()) ;
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.black,
                       minimumSize: Size(250, 50),
                     ),
-                    child: Text("Sign Up",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500),),
+                    child: Text(
+                      "Sign Up",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-              
                       Text("Don't have an account?"),
-              
                       SizedBox(width: 6),
-              
                       GestureDetector(
                         onTap: () {
                           print("Sign in clicked");
@@ -249,18 +279,12 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(height: 10),
                   Text("or"),
-                  SizedBox(height: 15,),
-                  CustomBox(
-                    image: "google.png",
-                    text: "Continue with Google",
-                  ),
-                  SizedBox(height: 15,),
-                  CustomBox(
-                    image: "apple.png",
-                    text: "Continue with Apple",
-                  )
+                  SizedBox(height: 15),
+                  CustomBox(image: "google.png", text: "Continue with Google"),
+                  SizedBox(height: 15),
+                  CustomBox(image: "apple.png", text: "Continue with Apple"),
                 ],
               ),
             ),
