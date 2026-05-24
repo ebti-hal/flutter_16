@@ -14,7 +14,8 @@ class _HomePageState extends State<HomePage> {
   TextEditingController password = TextEditingController();
   TextEditingController rePassword = TextEditingController();
   final formKey = GlobalKey<FormState>();
-   bool _obscure = true;
+  bool _obscurePassword = true;
+  bool _obscureConfirmPassword = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -119,7 +120,7 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(height: 15,),
                   TextFormField(
                     controller: password,
-                    obscureText: _obscure,
+                    obscureText: _obscurePassword,
                     decoration: InputDecoration(
                       labelText: "Password",
                       hintText: "Enter your password",
@@ -127,10 +128,10 @@ class _HomePageState extends State<HomePage> {
                       suffixIcon: IconButton(
                         onPressed: (){
                           setState(() {
-                            _obscure = !_obscure;
+                            _obscurePassword = !_obscurePassword;
                           });
                         },
-                        icon: Icon(_obscure? Icons.visibility_off:Icons.visibility,color: Colors.black,size: 20,),
+                        icon: Icon(_obscurePassword? Icons.visibility_off:Icons.visibility,color: Colors.black,size: 20,),
                       ),
                       fillColor: Colors.grey.shade100,
                       filled: true,
@@ -168,14 +169,18 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(height: 15,),
                   TextFormField(
                     controller: rePassword,
-                    obscureText: _obscure,
+                    obscureText: _obscureConfirmPassword,
                     decoration: InputDecoration(
                       labelText: "Confirm password",
                       hintText: "Re-Enter your password",
                       prefixIcon: Icon(Icons.lock,color: Colors.black,),
                       suffixIcon: IconButton(
-                        onPressed: (){},
-                        icon: Icon(_obscure? Icons.visibility_off:Icons.visibility,color: Colors.black,size: 20,),
+                        onPressed: (){
+                          setState(() {
+                            _obscureConfirmPassword = !_obscureConfirmPassword;
+                          });
+                        },
+                        icon: Icon(_obscureConfirmPassword? Icons.visibility_off:Icons.visibility,color: Colors.black,size: 20,),
                       ),
                       fillColor: Colors.grey.shade100,
                       filled: true,
