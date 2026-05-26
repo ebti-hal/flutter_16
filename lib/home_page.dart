@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
         child: Form(
           key: formKey,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 40.0),
+            padding:  EdgeInsets.symmetric(horizontal: 40.0),
             child: SingleChildScrollView(
               physics: BouncingScrollPhysics(),
               child: Column(
@@ -41,6 +41,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   SizedBox(height: 20),
 
+                  //Phone
                   TextFormField(
                     controller: phone,
                     decoration: InputDecoration(
@@ -89,6 +90,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   SizedBox(height: 15),
 
+                  //Email
                   TextFormField(
                     controller: email,
                     keyboardType: TextInputType.emailAddress,
@@ -130,6 +132,8 @@ class _HomePageState extends State<HomePage> {
                     },
                   ),
                   SizedBox(height: 15),
+
+                  //Password
                   TextFormField(
                     controller: password,
                     obscureText: _obscurePassword,
@@ -185,6 +189,8 @@ class _HomePageState extends State<HomePage> {
                     },
                   ),
                   SizedBox(height: 15),
+
+                  //Confirm password
                   TextFormField(
                     controller: rePassword,
                     obscureText: _obscureConfirmPassword,
@@ -243,6 +249,8 @@ class _HomePageState extends State<HomePage> {
                     },
                   ),
                   SizedBox(height: 30),
+
+                  //Sign up Button
                   ElevatedButton(
                     onPressed: () {
                       if (formKey.currentState!.validate()) ;
